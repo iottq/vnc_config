@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+#!/bin/sh
+
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+unset SESSION_MANAGER
+
+export XDG_SESSION_TYPE=x11
+export GNOME_SHELL_SESSION_MODE=ubuntu
+export DESKTOP_SESSION=ubuntu
+export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+
+xrdb $HOME/.Xresources
+
+# 启动 GNOME 会话
+exec gnome-session --session=ubuntu
+
